@@ -17,6 +17,12 @@
 - To preserve food, remove
 - formation of clouds
 
+## intent:QuestionWithOption
+- By what time had mouse-sized viviparous mammals evolved? (A) Corvidae (B) arthropods (C) birds (D) backbones (E) keratin (F) Jurassic (G) front paws (H) Parakeets.
+- what kind of beads are formed from vapor condensing? (A) tiny (B) H20 (C) h2o (D) carbon (E) hydrogen (F) rain (G) oxygen (H) Dew.
+- what is a simple mode of transportation? (A) lamphreys (B) potassium (C) Being over land (D) chemical messengers (E) mammals (F) moving over land (G) With feedback loops (H) passenger cars.
+
+
 ## intent:goodbye
 - bye
 - goodbye

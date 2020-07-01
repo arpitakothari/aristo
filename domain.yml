@@ -5,11 +5,13 @@ intents:
   - affirm
   - deny
   - bot_challenge
+  - QuestionWithOption
 
 
 
 actions:
   - action_question_ask
+  - action_question_with_option_ask
 
 responses:
   utter_greet:
