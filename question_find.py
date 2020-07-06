@@ -3,18 +3,18 @@ import jsonlines
 import openpyxl
 import os
 from nltk.tokenize import word_tokenize
-import nltk
+
 
 
 def SimilarityFinder(text):
     
     nlp = spacy.load('en_core_web_lg')
-    nltk.download('punkt')
+    
     all_stopwords = nlp.Defaults.stop_words
 
 
 
-    message = (text)
+    message = text
     answer = dict()
     choices = dict()
     answerkey = dict()
@@ -22,7 +22,7 @@ def SimilarityFinder(text):
 
         
 
-    with jsonlines.open('dataset/train_no_stopwords.jsonl') as reader:
+    with jsonlines.open('dataset/sd.jsonl') as reader:
         print("entered in json")
         text_tokens = word_tokenize(message)
         tokens_without_sw= [word for word in text_tokens if not word in all_stopwords]

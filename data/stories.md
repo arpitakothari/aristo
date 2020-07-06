@@ -19,7 +19,7 @@
   - action_question_ask
 * question
   - action_question_ask
-  * question
+* question
   - action_question_ask
 * deny
   - utter_goodbye
@@ -30,17 +30,17 @@
 * goodbye
   - utter_goodbye
 
-<!-- ## happy path
+## happy path
 * greet
   - utter_greet
 * QuestionWithOption
-  - action_question_ask
+  - action_question_with_option_ask
 
 ## sad path 1
 * greet
   - utter_greet
 * QuestionWithOption
-  - action_question_ask
+  - action_question_with_option_ask
 * affirm
   - utter_happy
 
@@ -48,17 +48,17 @@
 * greet
   - utter_greet
 * QuestionWithOption
-  - action_question_ask
+  - action_question_with_option_ask
 * QuestionWithOption
-  - action_question_ask
-  * QuestionWithOption
-  - action_question_ask
+  - action_question_with_option_ask
+* QuestionWithOption
+  - action_question_with_option_ask
 * deny
   - utter_goodbye
 
 ## say goodbye
 * QuestionWithOption
-  - action_question_ask
+  - action_question_with_option_ask
 * goodbye
   - utter_goodbye
 
@@ -66,4 +66,4 @@
 
 ## bot challenge
 * bot_challenge
-  - utter_iamabot -->
+  - utter_iamabot

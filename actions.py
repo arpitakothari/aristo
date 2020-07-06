@@ -14,7 +14,8 @@ from rasa_sdk.executor import CollectingDispatcher
 from question_find import SimilarityFinder
 from question_find import writeToExcel
 import time
-
+import nltk
+nltk.download('punkt')
 # class ActionQuestionAsk(Action):
 
 #     def name(self) -> Text:
