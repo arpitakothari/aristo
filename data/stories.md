@@ -2,13 +2,17 @@
 * greet
   - utter_greet
 * question
+  - utter_wait
   - action_question_ask
+  - utter_did_that_help
 
 ## sad path 1
 * greet
   - utter_greet
 * question
+  - utter_wait
   - action_question_ask
+  - utter_did_that_help
 * affirm
   - utter_happy
 
@@ -16,16 +20,21 @@
 * greet
   - utter_greet
 * question
+  - utter_wait
   - action_question_ask
 * question
+  - utter_wait
   - action_question_ask
 * question
+  - utter_wait
   - action_question_ask
+  - utter_did_that_help
 * deny
-  - utter_goodbye
+  - utter_regret
 
 ## say goodbye
 * question
+  - utter_wait
   - action_question_ask
 * goodbye
   - utter_goodbye
