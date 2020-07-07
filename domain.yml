@@ -8,7 +8,7 @@ intents:
 - affirm
 - deny
 - bot_challenge
-- QuestionWithOption
+
 responses:
   utter_greet:
   - text: Hey! How are you?

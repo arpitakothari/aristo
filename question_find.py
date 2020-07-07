@@ -2,17 +2,15 @@ import spacy
 import jsonlines
 import openpyxl
 import os
+import string
 from nltk.tokenize import word_tokenize
-
+import actions
 
 
 def SimilarityFinder(text):
     
-    nlp = spacy.load('en_core_web_lg')
     
-    all_stopwords = nlp.Defaults.stop_words
-
-
+    all_stopwords = actions.nlp.Defaults.stop_words
 
     message = text
     answer = dict()
@@ -31,7 +29,7 @@ def SimilarityFinder(text):
         for obj in reader:
             # This will remove stopwords from the user input.
             
-            test_score = nlp(obj['question']).similarity(nlp(message_sw)) 
+            test_score = actions.nlp(obj['question']).similarity(actions.nlp(message_sw)) 
 
             if(test_score > 0.85):
                 answer[obj['id']] = obj['answer']
@@ -43,7 +41,7 @@ def SimilarityFinder(text):
     workbook = wb.active
         
     if( len(answerkey) == 0 ):
-        fa =  "No Answer found for the question." 
+        fa =  "Oops! I could not find the answer." 
         print( "No Answer found for the question." )
         if(workbook.max_row > 1):
             data = (workbook.max_row , "NA" , text , "NA" , "NA" , "Below 85 %" )
@@ -57,7 +55,7 @@ def SimilarityFinder(text):
         confd_scoretxt = float(confd_score[id])
         
         print("Answer is :" +answer_txt + "AnswerKey :" +answerkey_txt ) 
-        fa = "Answer Key is : " + answerkey_txt + " and the answer is :" + answer_txt
+        fa = answer_txt.capitalize()
         
         if(workbook.max_row > 1):
             data = (workbook.max_row , id , text , answerkey_txt , answer_txt , confd_scoretxt )

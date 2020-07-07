@@ -30,7 +30,7 @@
 * goodbye
   - utter_goodbye
 
-## happy path
+<!-- ## happy path
 * greet
   - utter_greet
 * QuestionWithOption
@@ -61,7 +61,7 @@
   - action_question_with_option_ask
 * goodbye
   - utter_goodbye
-
+ -->
 
 
 ## bot challenge

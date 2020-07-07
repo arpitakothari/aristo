@@ -16,6 +16,9 @@ from question_find import writeToExcel
 import time
 import nltk
 nltk.download('punkt')
+import spacy
+nlp = spacy.load('en_core_web_lg')
+
 # class ActionQuestionAsk(Action):
 
 #     def name(self) -> Text:
@@ -53,7 +56,6 @@ class ActionQuestionAsk(Action) :
         print(tracker.latest_message['text'])
         text=tracker.latest_message['text']
         fa=SimilarityFinder(text)
-        time.sleep(15)
         dispatcher.utter_message(fa[0])
         writeToExcel(fa[1])
         return []
@@ -69,7 +71,6 @@ class ActionQuestionWithOptionAsk(Action) :
         print(tracker.latest_message['text'])
         text=tracker.latest_message['text']
         fa=SimilarityFinder(text)
-        time.sleep(15)
         dispatcher.utter_message(fa[0])
         writeToExcel(fa[1])        
         return []
