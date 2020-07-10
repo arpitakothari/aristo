@@ -13,12 +13,13 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from question_find import SimilarityFinder
 from question_find import writeToExcel
-import time
 import nltk
 nltk.download('punkt')
 import spacy
-nlp = spacy.load('en_core_web_lg')
 
+nlp = spacy.load('en_core_web_lg')
+all_stopwords = nlp.Defaults.stop_words
+all_stopwords.remove('what')
 # class ActionQuestionAsk(Action):
 
 #     def name(self) -> Text:

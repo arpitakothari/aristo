@@ -10,7 +10,7 @@ import actions
 def SimilarityFinder(text):
     
     
-    all_stopwords = actions.nlp.Defaults.stop_words
+    
 
     message = text
     answer = dict()
@@ -23,13 +23,13 @@ def SimilarityFinder(text):
     with jsonlines.open('dataset/sd.jsonl') as reader:
         print("entered in json")
         text_tokens = word_tokenize(message)
-        tokens_without_sw= [word for word in text_tokens if not word in all_stopwords]
+        tokens_without_sw= [word for word in text_tokens if not word in actions.all_stopwords]
         message_sw = " ".join(tokens_without_sw)
-
+        message_sw = actions.nlp(message_sw)
         for obj in reader:
             # This will remove stopwords from the user input.
             
-            test_score = actions.nlp(obj['question']).similarity(actions.nlp(message_sw)) 
+            test_score = actions.nlp(obj['question']).similarity(message_sw) 
 
             if(test_score > 0.85):
                 answer[obj['id']] = obj['answer']
