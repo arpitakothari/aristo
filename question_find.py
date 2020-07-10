@@ -14,7 +14,6 @@ def SimilarityFinder(text):
 
     message = text
     answer = dict()
-    choices = dict()
     answerkey = dict()
     confd_score = dict()
 
@@ -37,7 +36,7 @@ def SimilarityFinder(text):
                 confd_score[obj['id']] = test_score
         print("exit from json")       
    
-    wb = openpyxl.load_workbook('score/score.xlsx');
+    wb = openpyxl.load_workbook('score/score.xlsx')
     workbook = wb.active
         
     if( len(answerkey) == 0 ):
